@@ -1,12 +1,11 @@
-2048 Game Application
+<h1>2048 Game Application</h1>
+<a href="https://www.youtube.com/playlist?list=PLE9cyLFRZmXJ7V4EdsOZPpPGjcdDo3Tww">Part of Youtube Series</a>
 
 
-Part of Youtube Series
-Playlist Link here - https://www.youtube.com/playlist?list=PLE9cyLFRZmXJ7V4EdsOZPpPGjcdDo3Tww
-
-
-React JS with Hooks
-
-How to start?
-1. `yarn install`
-2. `yarn start`
+<h3>React JS with Hooks</h3>
+<b>How to start?</b>
+<ol>
+  <li>Download the zip folder and go to the file from the terminal</li>
+  <li>`yarn install`</li>
+  <li>`yarn start`</li>
+</ol>
