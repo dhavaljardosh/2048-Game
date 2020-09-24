@@ -9,6 +9,7 @@
     "lodash.clonedeep": "^4.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-easy-swipe": "0.0.21",
     "react-scripts": "3.4.1"
   },
   "scripts": {

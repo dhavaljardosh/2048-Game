@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import cloneDeep from "lodash.clonedeep";
 import { useEvent, getColors } from "./util";
+import Swipe from "react-easy-swipe";
 
 function App() {
   const UP_ARROW = 38;
@@ -61,6 +62,7 @@ function App() {
   };
   // Swipe Left
   const swipeLeft = (dummy) => {
+    console.log("swipe left");
     let oldGrid = data;
     let newArray = cloneDeep(data);
 
@@ -106,6 +108,7 @@ function App() {
   };
 
   const swipeRight = (dummy) => {
+    console.log("swipe right");
     let oldData = data;
     let newArray = cloneDeep(data);
 
@@ -151,6 +154,7 @@ function App() {
   };
 
   const swipeDown = (dummy) => {
+    console.log("swipe down");
     console.log(data);
     let b = cloneDeep(data);
     let oldData = JSON.parse(JSON.stringify(data));
@@ -195,6 +199,7 @@ function App() {
   };
 
   const swipeUp = (dummy) => {
+    console.log("swipe up");
     let b = cloneDeep(data);
     let oldData = JSON.parse(JSON.stringify(data));
     for (let i = 0; i < 4; i++) {
@@ -400,15 +405,25 @@ function App() {
               </div>
             </div>
           )}
-          {data.map((row, oneIndex) => {
-            return (
-              <div style={{ display: "flex" }} key={oneIndex}>
-                {row.map((digit, index) => (
-                  <Block num={digit} key={index} />
-                ))}
-              </div>
-            );
-          })}
+          <Swipe
+            onSwipeDown={() => {
+              swipeDown();
+            }}
+            onSwipeLeft={() => swipeLeft()}
+            onSwipeRight={() => swipeRight()}
+            onSwipeUp={() => swipeUp()}
+            style={{ overflowY: "hidden" }}
+          >
+            {data.map((row, oneIndex) => {
+              return (
+                <div style={{ display: "flex" }} key={oneIndex}>
+                  {row.map((digit, index) => (
+                    <Block num={digit} key={index} />
+                  ))}
+                </div>
+              );
+            })}
+          </Swipe>
         </div>
 
         <div style={{ width: "inherit" }}>
