@@ -322,7 +322,7 @@ function App() {
 
   useEffect(() => {
     initialize();
-    // document.addEventListener("keydown", handleKeyDown);
+    // eslint-disable-next-line
   }, []);
 
   // This is a custom function
